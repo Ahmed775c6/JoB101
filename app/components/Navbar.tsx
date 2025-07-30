@@ -37,7 +37,7 @@ const [showOptions, setShowOptions] = useState(false);
       {
         showOptions && <Options onClose={()=>{setShowOptions(false)}} />
       }
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${
+      <nav className={`fixed top-0  left-0 w-full z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white shadow-md py-2 ' : 'bg-transparent py-2'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,10 +90,10 @@ const [showOptions, setShowOptions] = useState(false);
                 
                 <button 
                   onClick={() => setShowOptions(true)} 
-                  className={`px-4 py-2 rounded-md font-medium transition-colors ${
+                  className={`px-4 py-2 cursor-pointer rounded-md font-medium transition-colors ${
                     isScrolled 
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white ' 
-                      : 'bg-gradient-to-r from-blue-600 to-purple-600 '
+                      : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white '
                   }`}
                 >
                   Sign Up

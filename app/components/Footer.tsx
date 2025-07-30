@@ -22,7 +22,7 @@ const Footer = () => {
           <img src="/vercel.svg" alt="logo" className="w-40 h-40 object-center" />
           <h1 className="text-[4rem] font-bold hero_title gradient">JOB 101</h1>
           <p className="text-3xl font-bold hero_title gradient">Get in Touch</p>
-          <p className="text-gray-300">
+          <p className="text-gray-300 ">
             Feel free to reach out to us for any inquiries, feedback, or support. 
             We're here to assist you and ensure you have the best experience possible.
           </p>

@@ -11,7 +11,7 @@ interface OptionsProps {
 }
 const Options = ({onClose} :  OptionsProps) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [darkMode, setDarkMode] = useState(true);
+const darkMode = true
 
 
   const handleSelect = (option: string) => {
@@ -26,7 +26,7 @@ const Options = ({onClose} :  OptionsProps) => {
   };
 
   return (
-    <div className={`min-h-screen fixed w-full h-screen flex flex-col items-center justify-center p-4 transition-colors duration-300 z-10 ${darkMode ? 'bg-gray-900' : 'bg-gradient-to-br from-blue-50 to-indigo-100'}`}>
+    <div className={`min-h-screen fixed w-full  h-screen flex flex-col items-center justify-center p-4 transition-colors duration-300 z-20 ${darkMode ? 'bg-gray-900' : 'bg-gradient-to-br from-blue-50 to-indigo-100'}`}>
       <div className="w-full max-w-md">
         <div className="flex justify-between items-center mb-8">
           <div className="flex items-center space-x-2">
@@ -37,7 +37,7 @@ const Options = ({onClose} :  OptionsProps) => {
       
           </div>
            <button 
-              className=" text-white bg-black bg-opacity-50 rounded-full p-2 z-10 hover:bg-opacity-75"
+              className=" text-white cursor-pointer bg-black bg-opacity-50 rounded-full p-2 z-10 hover:bg-opacity-75"
      onClick={onClose} 
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

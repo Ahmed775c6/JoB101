@@ -20,12 +20,14 @@ const Hero = () => {
           xl:text-8xl  /* 1280px+ */
           leading-tight 
           tracking-tight
+          text-white
         '>
           Welcome To Job 101
         </h1>
         
         {/* Responsive paragraph with margin adjustments */}
         <p className='
+        text-white
           text-lg    /* Base mobile size */
           sm:text-xl  /* 640px+ */
           md:text-2xl /* 768px+ */

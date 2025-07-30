@@ -28,15 +28,15 @@ const About_Services = () => {
     <>
  <section className=' w-full p-6 flex flex-col gap-3 bg-[#070707]'>
          <h1 className='text-[4.5rem] font-bold hero_title gradient'>Why Us ?</h1>
-      <p className='text-xl p-3'>
+      <p className='text-xl p-3 text-white '>
         You’ve probably come across many freelancing platforms like Upwork that are well-known or have been around for a while. But let’s face it — when you apply through those platforms, reality hits hard. You can spend months and a lot of money without landing a single job or even getting contacted by a client.
         That’s where we come in. With us, you don’t need to spend a single “douru” before getting hired. Just focus on building your profile and connecting with clients — we’ll handle the rest.
       </p>
-      <p className='text-xl p-3'>
+      <p className='text-xl p-3 text-white'>
         We’re not just another freelancing platform. We’re a community of freelancers and clients who are passionate about what we do. We believe in creating a space where you can thrive, grow, and succeed without the usual barriers.
       </p>
       
-      <p className='text-3xl'>
+      <p className='text-3xl text-white'>
         Create an account and explore real job opportunities today.
       </p>
       <div className="banner ">
