@@ -1,6 +1,6 @@
 // app/components/Navbar.jsx
 'use client';
-
+import Options from './Options';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Search from './Search';
@@ -9,7 +9,7 @@ const Navbar = () => {
   const [searching, setSearching] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
+const [showOptions, setShowOptions] = useState(false);
   // Handle scroll effect for navbar
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +34,9 @@ const Navbar = () => {
   return (
     <>
       {searching && <Search onClose={() => setSearching(false)} />}
-      
+      {
+        showOptions && <Options onClose={()=>{setShowOptions(false)}} />
+      }
       <nav className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white shadow-md py-2 ' : 'bg-transparent py-2'
       }`}>
@@ -86,8 +88,8 @@ const Navbar = () => {
                   Login
                 </Link>
                 
-                <Link 
-                  href="/signup" 
+                <button 
+                  onClick={() => setShowOptions(true)} 
                   className={`px-4 py-2 rounded-md font-medium transition-colors ${
                     isScrolled 
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white ' 
@@ -95,7 +97,7 @@ const Navbar = () => {
                   }`}
                 >
                   Sign Up
-                </Link>
+                </button>
               </div>
             </div>
 
