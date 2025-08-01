@@ -8,8 +8,11 @@ import {
   FaPalette,
   FaRobot,
   FaChartLine,
-  FaBullhorn
+  FaBullhorn,
+  FaBookOpen,
 } from 'react-icons/fa';
+
+import Link from 'next/link';
 const jobCategories = [
   { id: 1, name: "Development & IT", icon: FaCode, color: "#e1f5fe", iconColor: "bg-blue-500"  },
   { id: 2, name: "Admin & Support",  icon: FaHeadset, color: "#e8f5e9",   iconColor: "bg-green-600" },
@@ -20,7 +23,9 @@ const jobCategories = [
   { id: 7, name: "Design",icon: FaPalette, color: "#fff8e1", iconColor:  "bg-amber-500"},
   { id: 8, name: "AI Services", icon: FaRobot, color: "#e8eaf6", iconColor: "bg-indigo-700"  },
   { id: 9, name: "Finance", icon: FaChartLine, color: "#fffde7", iconColor: "bg-yellow-600"  },
-  { id: 10, name: "Marketing", icon: FaBullhorn, color: "#e0f2f1", iconColor: "bg-teal-600" }
+  { id: 10, name: "Marketing", icon: FaBullhorn, color: "#e0f2f1", iconColor: "bg-teal-600" },
+  {id :  11 , name : "Education" , icon : FaBookOpen, color: "#f3e5f5", iconColor: "bg-red-500" }
+
 ];
 
 const About_Services = () => {
@@ -42,15 +47,15 @@ const About_Services = () => {
       <div className="banner ">
 <div className="slider" style={{ ['--quantity' as any]: jobCategories.length }}>
   {jobCategories.map((job, index) => (
-    <div 
+  <Link href = {`/query/${job.name}`} 
       key={job.id}
       className="item" 
       style={{ ['--position' as any]: index + 1 }}
     >
       <div 
-        className="job-card   overflow-hidden backdrop-blur-lg rounded-md 
+        className="job-card cursor-pointer   overflow-hidden backdrop-blur-lg rounded-md 
           justify-center  text-center  inline-flex items-center
-           transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg"
+           transition-all duration-300  hover:scale-105 active:scale-95 shadow-lg"
   style={{
         background: `linear-gradient(135deg, ${job.color}80, ${job.color}40)`,
         boxShadow: `0 4px 30px ${job.color}20`,
@@ -63,7 +68,7 @@ const About_Services = () => {
         </div>
         <h4>{job.name}</h4>
       </div>
-    </div>
+    </Link>
   ))}
 </div>
       </div>

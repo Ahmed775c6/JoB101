@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react"
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { redirect } from "next/navigation";
 const FreelancerForm = () => {
     const [Loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -33,18 +34,12 @@ const FreelancerForm = () => {
       
       setLoading(false);
       return;
-    }else{
+    }else if(res.status == 201) {
         setLoading(false);
-        setFormData({
-            First_Name: '',
-            Last_Name: '',
-            email: '',
-            password: '',
-            country: '',
-        });
-       
-        // Optionally redirect or perform other actions
+
         const yes = await res.json();
+        console.log("Freelancer registered successfully", yes.uid);
+        redirect(`/users/freelancer/${yes.uid}`);
       
     }
 
